@@ -37,7 +37,7 @@ PRODUCT_PACKAGES += \
 
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay
+    $(LOCAL_PATH)/overlay \
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -60,6 +60,9 @@ $(foreach DEVICE_SKU, $(DEVICE_SKUS), \
 # Shipping API level
 BOARD_SHIPPING_API_LEVEL := 30
 PRODUCT_SHIPPING_API_LEVEL := 31
+
+#Signing
+$(call inherit-product, vendor/pixelage-priv/config/common.mk)
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \

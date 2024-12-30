@@ -12,11 +12,18 @@ $(call inherit-product, device/motorola/devon/device.mk)
 
 # Inherit some common LineageOS stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+
 # Inherit from ViPER4AndroidFX
 $(call inherit-product, packages/apps/ViPER4AndroidFX/config.mk)
 
+# Inherit some common Pixelage stuff.
+$(call inherit-product, vendor/pixelage/config/common_full_phone.mk)
+
+# Pixelage
+TARGET_FACE_UNLOCK_SUPPORTED := true
+
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := lineage_devon
+PRODUCT_NAME := pixelage_devon
 PRODUCT_DEVICE := devon
 PRODUCT_BRAND := motorola
 PRODUCT_MODEL := moto g32
