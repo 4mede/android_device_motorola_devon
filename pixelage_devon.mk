@@ -16,6 +16,9 @@ $(call inherit-product, packages/apps/ViPER4AndroidFX/config.mk)
 # Inherit some common Pixelage stuff.
 $(call inherit-product, vendor/pixelage/config/common_full_phone.mk)
 
+# Boot animation
+TARGET_BOOT_ANIMATION_RES := 1080
+
 # Pixelage
 TARGET_FACE_UNLOCK_SUPPORTED := true
 
