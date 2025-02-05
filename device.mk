@@ -64,6 +64,9 @@ PRODUCT_SHIPPING_API_LEVEL := 31
 #Signing
 $(call inherit-product, vendor/pixelage-priv/config/common.mk)
 
+# Prebuilts
+PRODUCT_BROKEN_VERIFY_USES_LIBRARIES := true
+
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
