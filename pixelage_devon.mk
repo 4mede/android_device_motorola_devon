@@ -20,6 +20,8 @@ $(call inherit-product, vendor/pixelage/config/common_full_phone.mk)
 TARGET_BOOT_ANIMATION_RES := 1080
 
 # Pixelage
+PIXELAGE_BUILDTYPE := UNOFFICIAL
+PIXELAGE_MAINTAINER := b
 TARGET_FACE_UNLOCK_SUPPORTED := true
 
 # Device identifier. This must come after all inclusions.
