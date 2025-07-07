@@ -37,6 +37,9 @@ PRODUCT_PACKAGES += \
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay
+    
+PRODUCT_PACKAGES += \
+    WifiResDevice
 
 # Permissions
 PRODUCT_COPY_FILES += \
