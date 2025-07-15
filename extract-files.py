@@ -23,7 +23,6 @@ namespace_imports = [
     'hardware/motorola',
     'hardware/qcom-caf/wlan',
     'vendor/motorola/sm6225-common',
-    'vendor/qcom/opensource/display',
 ]
 
 lib_fixups: lib_fixups_user_type = {
