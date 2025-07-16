@@ -7,6 +7,7 @@
 include device/motorola/sm6225-common/BoardConfigCommon.mk
 
 DEVICE_PATH := device/motorola/devon
+KERNEL_PATH := device/motorola/devon-kernel
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := devon
@@ -27,11 +28,14 @@ ODM_MANIFEST_N_FILES := $(DEVICE_PATH)/sku/manifest_n.xml
 ODM_MANIFEST_NC_FILES := $(DEVICE_PATH)/sku/manifest_nc.xml
 
 # Kernel
-TARGET_KERNEL_CONFIG += vendor/ext_config/devon-default.config
+BOARD_PREBUILT_DTBOIMAGE := $(KERNEL_PATH)/dtbo.img
+TARGET_PREBUILT_KERNEL := device/motorola/devon-kernel/kernel
+PRODUCT_COPY_FILES += \
+    $(KERNEL_PATH)/dtb.img:$(TARGET_COPY_OUT)/dtb.img \
+    $(KERNEL_PATH)/dtbo.img:$(TARGET_COPY_OUT)/dtbo.img
 
-# Kernel Modules - Vendor Boot
-BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD := $(strip $(shell cat $(DEVICE_PATH)/vendor_boot.modules.load))
-BOOT_KERNEL_MODULES := $(BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD)
+# Fix prebuilt build
+$(shell mkdir -p $(OUT_DIR)/target/product/caprip/obj/KERNEL_OBJ/usr)
 
 # Partitions
 BOARD_VENDOR_BOOTIMAGE_PARTITION_SIZE := 100663296

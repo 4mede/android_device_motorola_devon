@@ -3,6 +3,8 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+KERNEL_PREBUILT_DIR := $(LOCAL_PATH)-kernel
+
 # Inherit from sm6225-common
 $(call inherit-product, device/motorola/sm6225-common/common.mk)
 
@@ -33,6 +35,11 @@ PRODUCT_PACKAGES += \
 # NFC
 PRODUCT_PACKAGES += \
     android.hardware.nfc@1.2-service.st
+    
+# Kernel
+LOCAL_KERNEL := device/motorola/devon-kernel/kernel
+PRODUCT_COPY_FILES += \
+	$(LOCAL_KERNEL):kernel
 
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += \
