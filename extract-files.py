@@ -43,6 +43,9 @@ blob_fixups: blob_fixups_user_type = {
         .clear_symbol_version('AHardwareBuffer_unlock'),
 }  # fmt: skip
 
+extract_fns: extract_fns_user_type = {
+}
+
 module = ExtractUtilsModule(
     'devon',
     'motorola',
