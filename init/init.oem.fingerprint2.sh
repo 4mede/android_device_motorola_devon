@@ -32,16 +32,6 @@ hal_list=('fps_hal' 'ets_hal')
 last_vendor_index=`expr ${#vendor_list[@]} - 1`
 vendor_list_size=${#vendor_list[@]}
 
-if [ $vendor_list_size != ${#kernel_so_list[@]} ]; then
-    log "error, vendor_list.size is not equal to kernel_so_list"
-    return 255
-fi
-
-if [ $vendor_list_size != ${#kernel_so_name_list[@]} ]; then
-    log "error, vendor_list.size is not equal to kernel_so_name_list"
-    return 255
-fi
-
 if [ $vendor_list_size != ${#hal_list[@]} ]; then
     log "error, vendor_list.size is not equal to hal_list"
     return 255
