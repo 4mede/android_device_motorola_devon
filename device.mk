@@ -34,6 +34,8 @@ PRODUCT_PACKAGES += \
 
 # NFC
 PRODUCT_PACKAGES += \
+    android.hardware.nfc@1.2.vendor \
+    android.hardware.nfc@1.2-service \
     android.hardware.nfc@1.2-service.st
     
 # Kernel
@@ -65,6 +67,9 @@ $(foreach DEVICE_SKU, $(DEVICE_SKUS), \
     $(LOCAL_PATH)/permissions/unavail.android.hardware.nfc.uicc.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/sku_$(DEVICE_SKU)/unavail.android.hardware.nfc.uicc.xml \
     $(LOCAL_PATH)/permissions/unavail.android.hardware.nfc.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/sku_$(DEVICE_SKU)/unavail.android.hardware.nfc.xml \
     $(LOCAL_PATH)/permissions/unavail.com.nxp.mifare.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/sku_$(DEVICE_SKU)/com.nxp.mifare.xml)
+    
+TARGET_COMMON_QTI_COMPONENTS += \
+    nfc
 
 # Shipping API level
 BOARD_SHIPPING_API_LEVEL := 30
